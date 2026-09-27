@@ -1,0 +1,19 @@
+{
+  "template_path": "",
+  "input_dir": "",
+  "output_dir": "",
+  "sign_path": "",
+  "signature": {
+    "sign_x": 385,
+    "sign_y": 45,
+    "sign_w": 210,
+    "calibration": false
+  },
+  "options": {
+    "fill_customer_table": true,
+    "count_pages": true,
+    "do_merge": true,
+    "do_sign": false,
+    "remove_breaks": true
+  }
+}

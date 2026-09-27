@@ -6,6 +6,7 @@ import GuiMockup from './components/GuiMockup';
 import TechStack from './components/TechStack';
 import CodeViewer from './components/CodeViewer';
 import ConfigSection from './components/ConfigSection';
+import ProjectStructure from './components/ProjectStructure';
 import Footer from './components/Footer';
 
 export default function App() {
@@ -13,7 +14,7 @@ export default function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'features', 'mockup', 'tech', 'code', 'config'];
+      const sections = ['hero', 'features', 'mockup', 'tech', 'code', 'config', 'structure'];
       for (const id of sections) {
         const el = document.getElementById(id);
         if (el) {
@@ -39,6 +40,7 @@ export default function App() {
         <TechStack />
         <CodeViewer />
         <ConfigSection />
+        <ProjectStructure />
       </main>
       <Footer />
     </div>

@@ -10,6 +10,7 @@ export default function Header({ activeSection }: HeaderProps) {
     { id: 'tech', label: 'Технологии' },
     { id: 'code', label: 'Код' },
     { id: 'config', label: 'Конфигурация' },
+    { id: 'structure', label: 'Структура' },
   ];
 
   const scrollTo = (id: string) => {
