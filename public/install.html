@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Установка Титулы-ФП — Быстрый старт</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container { max-width: 900px; margin: 0 auto; }
+        h1 {
+            text-align: center;
+            font-size: 2em;
+            margin: 30px 0;
+            background: linear-gradient(135deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .step {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 16px 0;
+        }
+        .step h2 {
+            color: #60a5fa;
+            font-size: 1.2em;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .step-number {
+            background: #3b82f6;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .code-block {
+            background: #0f172a;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 12px 0;
+            position: relative;
+            overflow-x: auto;
+        }
+        .code-block code {
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 13px;
+            color: #86efac;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: all 0.2s;
+        }
+        .copy-btn:hover { background: #2563eb; }
+        .copy-btn.copied { background: #22c55e; }
+        .warning {
+            background: #422006;
+            border: 1px solid #92400e;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 12px 0;
+            color: #fbbf24;
+        }
+        .success {
+            background: #052e16;
+            border: 1px solid #166534;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 12px 0;
+            color: #86efac;
+        }
+        .link {
+            color: #60a5fa;
+            text-decoration: underline;
+        }
+        .link:hover { color: #93c5fd; }
+        p { margin: 8px 0; line-height: 1.6; }
+        .big-btn {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #16a34a, #059669);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 20px 0;
+            transition: all 0.2s;
+        }
+        .big-btn:hover { transform: scale(1.02); box-shadow: 0 4px 20px rgba(22, 163, 74, 0.3); }
+        .big-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Установка Титулы-ФП</h1>
+
+        <!-- Шаг 0: Очистка -->
+        <div class="step">
+            <h2><span class="step-number">0</span> Очистите папку</h2>
+            <p>Сначала удалите все файлы из папки <code>E:\Титула\Программ\programm\</code>:</p>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">📋 Копировать</button>
+                <code>cd /d E:\Титула\Программ\programm && del /q * && for /d %d in (*) do rd /s /q "%d"</code>
+            </div>
+            <div class="warning">
+                ⚠️ Это удалит ВСЕ файлы в папке programm! Убедитесь, что там нет важных данных.
+            </div>
+        </div>
+
+        <!-- Шаг 1: Python -->
+        <div class="step">
+            <h2><span class="step-number">1</span> Установите Python</h2>
+            <p>Если Python ещё не установлен:</p>
+            <p>👉 <a href="https://www.python.org/ftp/python/3.11.9/python-3.11.9-amd64.exe" class="link">Скачать Python 3.11 (прямая ссылка)</a></p>
+            <div class="warning">
+                ⚠️ При установке ОБЯЗАТЕЛЬНО отметьте галочку <strong>"Add Python to PATH"</strong>!
+            </div>
+            <p>Проверьте установку:</p>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">📋 Копировать</button>
+                <code>python --version</code>
+            </div>
+        </div>
+
+        <!-- Шаг 2: Установка -->
+        <div class="step">
+            <h2><span class="step-number">2</span> Создайте проект одной командой</h2>
+            <p>Скопируйте и вставьте эту команду в PowerShell (Win+X → Terminal/PowerShell):</p>
+            <div class="code-block" style="max-height: 300px; overflow-y: auto;">
+                <button class="copy-btn" onclick="copyCode(this)">📋 Копировать</button>
+                <code id="install-script">New-Item -ItemType Directory -Path "E:\Титула\Программ\programm\modules" -Force | Out-Null
+New-Item -ItemType Directory -Path "E:\Титула\Программ\programm\ui" -Force | Out-Null
+New-Item -ItemType Directory -Path "E:\Титула\Программ\programm\utils" -Force | Out-Null
+New-Item -ItemType Directory -Path "E:\Титула\Программ\programm\resources" -Force | Out-Null
+Set-Location "E:\Титула\Программ\programm"
+
+# requirements.txt
+@"
+PySide6>=6.5.0
+pdfplumber>=0.9.0
+python-docx>=0.8.11
+pywin32>=306
+pypdf>=3.0.0
+reportlab>=4.0.0
+Pillow>=10.0.0
+numpy>=1.24.0
+PyMuPDF>=1.23.0
+"@ | Out-File -FilePath "requirements.txt" -Encoding UTF8
+
+# config.json
+@"
+{
+  "template_path": "",
+  "input_dir": "",
+  "output_dir": "",
+  "sign_path": "",
+  "signature": {"sign_x": 385, "sign_y": 45, "sign_w": 210, "calibration": false},
+  "options": {"fill_customer_table": true, "count_pages": true, "do_merge": true, "do_sign": false, "remove_breaks": true}
+}
+"@ | Out-File -FilePath "config.json" -Encoding UTF8
+
+Write-Host "Структура создана! Теперь скачайте файлы модулей..." -ForegroundColor Green</code>
+            </div>
+        </div>
+
+        <!-- Шаг 3: Скачать файлы -->
+        <div class="step">
+            <h2><span class="step-number">3</span> Скачайте файлы модулей</h2>
+            <p>Нажмите кнопку ниже — скачается ZIP-архив со всеми файлами проекта:</p>
+            <button class="big-btn" id="downloadBtn" onclick="downloadProject()">
+                ⬇️ Скачать Титулы-ФП.zip
+            </button>
+            <p>После скачивания распакуйте архив в <code>E:\Титула\Программ\programm\</code> (замените существующие файлы).</p>
+        </div>
+
+        <!-- Шаг 4: Установка зависимостей -->
+        <div class="step">
+            <h2><span class="step-number">4</span> Установите зависимости</h2>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">📋 Копировать</button>
+                <code>cd /d E:\Титула\Программ\programm && pip install -r requirements.txt</code>
+            </div>
+            <p>Подождите 2-5 минут, пока установятся все библиотеки.</p>
+        </div>
+
+        <!-- Шаг 5: Запуск -->
+        <div class="step">
+            <h2><span class="step-number">5</span> Запустите программу</h2>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">📋 Копировать</button>
+                <code>cd /d E:\Титула\Программ\programm && python main.py</code>
+            </div>
+            <div class="success">
+                ✅ Готово! Откроется окно программы «Титулы-ФП».
+            </div>
+        </div>
+
+        <!-- Быстрая команда -->
+        <div class="step" style="border-color: #3b82f6;">
+            <h2>⚡ Быстрый старт (всё в одном)</h2>
+            <p>Если Python уже установлен, скопируйте эту команду — она сделает всё автоматически:</p>
+            <div class="code-block" style="max-height: 200px; overflow-y: auto;">
+                <button class="copy-btn" onclick="copyCode(this)">📋 Копировать</button>
+                <code>cd /d E:\Титула\Программ\programm && pip install -r requirements.txt && python main.py</code>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script>
+    function copyCode(btn) {
+        const code = btn.parentElement.querySelector('code').textContent;
+        navigator.clipboard.writeText(code).then(() => {
+            btn.textContent = '✓ Скопировано!';
+            btn.classList.add('copied');
+            setTimeout(() => {
+                btn.textContent = '📋 Копировать';
+                btn.classList.remove('copied');
+            }, 2000);
+        });
+    }
+
+    async function downloadProject() {
+        const btn = document.getElementById('downloadBtn');
+        btn.disabled = true;
+        btn.textContent = '⏳ Создание архива...';
+
+        try {
+            const zip = new JSZip();
+            const root = zip.folder('programm');
+
+            // Список файлов для скачивания
+            const files = [
+                'main.py', 'config.json', 'requirements.txt', 'README.md',
+                'modules/__init__.py', 'modules/extract_pdf.py', 'modules/word_fill.py',
+                'modules/merge.py', 'modules/signature.py', 'modules/pipeline.py', 'modules/preview.py',
+                'ui/__init__.py', 'ui/main_window.py', 'ui/preview_widget.py', 'ui/log_handler.py',
+                'utils/__init__.py', 'utils/config.py', 'utils/logger.py',
+                'resources/README.md'
+            ];
+
+            for (const file of files) {
+                try {
+                    const resp = await fetch('/programm/' + file);
+                    if (resp.ok) {
+                        const text = await resp.text();
+                        root.file(file, text);
+                    }
+                } catch(e) {
+                    console.warn('Не удалось загрузить:', file);
+                }
+            }
+
+            const blob = await zip.generateAsync({type: 'blob', compression: 'DEFLATE'});
+            
+            // Скачивание
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Титулы-ФП.zip';
+            a.click();
+            URL.revokeObjectURL(url);
+
+            btn.textContent = '✅ Скачано! Распакуйте в E:\\Титула\\Программ\\programm\\';
+            btn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
+        } catch(e) {
+            btn.textContent = '❌ Ошибка. Попробуйте ещё раз.';
+            btn.disabled = false;
+            console.error(e);
+        }
+    }
+    </script>
+</body>
+</html>
