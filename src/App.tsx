@@ -8,6 +8,7 @@ import CodeViewer from './components/CodeViewer';
 import ConfigSection from './components/ConfigSection';
 import ProjectStructure from './components/ProjectStructure';
 import DownloadButton from './components/DownloadButton';
+import InstallationGuide from './components/InstallationGuide';
 import Footer from './components/Footer';
 
 export default function App() {
@@ -15,7 +16,7 @@ export default function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'features', 'mockup', 'tech', 'code', 'config', 'structure', 'download'];
+      const sections = ['hero', 'features', 'mockup', 'tech', 'code', 'config', 'structure', 'guide', 'download'];
       for (const id of sections) {
         const el = document.getElementById(id);
         if (el) {
@@ -42,6 +43,7 @@ export default function App() {
         <CodeViewer />
         <ConfigSection />
         <ProjectStructure />
+        <InstallationGuide />
         <section id="download" className="py-16 px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
